@@ -1,9 +1,9 @@
-const express = require('express');
+import express, { json as _json } from 'express';
 const app = express();
-const routes = require('./routes');
+import routes from './routes';
 app.use(json());
 
-app.use(express.json());
+app.use(_json());
 
 app.use(routes);
 const port = 3002;
@@ -13,7 +13,7 @@ app.listen(port, ()=>{
 });
 module.import = { getPeople, addPeople, updatePeople };
 
-//app.get('/usuario', getPeople);
-//app.post('/usuario', addPeople);
-//app.put('/usuario', updatePeople);
-//app.delete('/usuario/:email', updatePeople);
+app.get('/usuario', getPeople);
+app.post('/usuario', addPeople);
+app.put('/usuario', updatePeople);
+app.delete('/usuario/:email', updatePeople);

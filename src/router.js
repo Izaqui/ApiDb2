@@ -1,4 +1,5 @@
-const express = require('express');
+//const express = require('express');
+import express, { json as _json } from 'express';
 
 import { getPeople, addPeople, deletePeople } from './User';
 const connection = require('./database');

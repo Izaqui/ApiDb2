@@ -1,7 +1,7 @@
-import { Router } from 'express';
+const express = require('express');
 
 import { getPeople, addPeople, deletePeople } from './User';
-
+const connection = require('./database');
 const routes = Router();
 
 routes.get('/usuario', getPeople);

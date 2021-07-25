@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const routes = require('./routes');
+app.use(json());
+
 app.use(express.json());
 
 app.use(routes);
@@ -11,7 +13,7 @@ app.listen(port, ()=>{
 });
 module.import = { getPeople, addPeople, updatePeople };
 
-app.get('/usuario', getPeople);
-app.post('/usuario', addPeople);
-app.put('/usuario', updatePeople);
-app.delete('/usuario/:email', updatePeople);
+//app.get('/usuario', getPeople);
+//app.post('/usuario', addPeople);
+//app.put('/usuario', updatePeople);
+//app.delete('/usuario/:email', updatePeople);
